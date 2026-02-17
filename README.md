@@ -1,27 +1,10 @@
-# vue-project
+# progressbar-test
 
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
 [VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-    - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-    - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-    - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-    - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
 
@@ -40,3 +23,11 @@ npm run dev
 ```sh
 npm run build
 ```
+# progressbar-test description
+
+A circular progress bar component. The progress bar has 4 states: in progress, success, warning, and error.
+The progress changes color according to this linear gradient: linear-gradient(to right, red 0%, red 10%, blue 20%, blue 90%, green 100%).
+The progress bar is created using SVG and canvas.
+A page with a circular chart using the Chart.js library.
+
+# npm run lint does not work
