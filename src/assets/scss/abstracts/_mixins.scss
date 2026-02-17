@@ -1,0 +1,105 @@
+@use 'sass:math';
+
+@mixin breakpoint($point) {
+	@if $point == xs {
+		@media (max-width: 420px) {
+			@content;
+		}
+	} @else if $point == s {
+		@media (max-width: 640px) {
+			@content;
+		}
+	} @else if $point == m {
+		@media (max-width: 767px) {
+			@content;
+		}
+	} @else if $point == ts {
+		@media (max-width: 900px) {
+			@content;
+		}
+	} @else if $point == t {
+		@media (max-width: 1024px) {
+			@content;
+		}
+	} @else if $point == ds {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	} @else if $point == d {
+		@media (max-width: 1440px) {
+			@content;
+		}
+	} @else if $point == l {
+		@media (max-width: 1600px) {
+			@content;
+		}
+	} @else if $point == xl {
+		@media (min-width: 1940px) {
+			@content;
+		}
+	}
+}
+$grid-gutter-width: 30px;
+
+@mixin make-row(
+	$gutter: $grid-gutter-width,
+	// растояние между колонками сетки
+	$max-width: null,
+	// по умолчанию максимальная ширина определяется родителем-контейнером
+	$justify: space-between,
+	// по умолчанию пустота заполняется между колонками
+	$align: flex-start // по умолчанию в строке элементы выравниваются по верхнему краю
+) {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: $justify;
+	align-content: $align;
+	//   margin-left: calc($gutter / -2);
+	//   margin-right: calc($gutter / -2);
+	margin-left: math.div($gutter, -2);
+	margin-right: math.div($gutter, -2);
+
+	@if $max-width {
+		max-width: $max-width;
+	}
+}
+
+@function get-col-width($col-nums, $grid-columns: 12) {
+	$col-width: auto;
+
+	@if $col-nums {
+		$col-width: math.div($col-nums, $grid-columns) * 100%;
+	} @else {
+		$col-width: 100%;
+	}
+
+	@return $col-width;
+}
+
+// создать flex-колонку
+@mixin make-col(
+	$columns: null,
+	// число занимамых колонок по сетке
+	$gutter: $grid-gutter-width,
+	// растояние между колонками сетки
+	$grid-columns: 12
+) {
+	$padding: math.div($gutter, 2);
+	padding-left: $padding;
+	padding-right: $padding;
+
+	$col-width: get-col-width($columns, $grid-columns);
+	width: $col-width;
+	flex-basis: $col-width;
+}
+
+@mixin change-col-width(
+	$columns: null,
+	// число занимамых колонок по сетке
+	//$gutter       : $grid-gutter-width,  // растояние между колонками сетки
+	$grid-columns: 12
+) {
+	$col-width: get-col-width($columns, $grid-columns);
+	width: $col-width;
+	flex-basis: $col-width;
+}

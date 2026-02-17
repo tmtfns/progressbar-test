@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+.form-field {
+	&__control {
+		position: relative;
+	}
+	&__inp {
+		font-family: $app-font;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.5;
+		color: $text-color;
+		padding: 24px 20px 10px;
+		height: 60px;
+		border: 1px solid #dbdfe9;
+		border-radius: 10px;
+		width: 100%;
+		background-color: transparent;
+
+		&:focus {
+			border-color: $blue-color;
+		}
+	}
+	&__label {
+		position: absolute;
+		top: 24px;
+		left: 20px;
+		font-family: $app-font;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.5;
+		color: $text-light-color;
+		transition: all 0.1s ease;
+		z-index: -1;
+	}
+	&__error {
+		font-size: 12px;
+		margin-top: 4px;
+	}
+}
+
+.form-field__inp:focus + .form-field__label,
+.form-field__inp:not(:placeholder-shown) + .form-field__label {
+	font-size: 12px;
+	line-height: 16px;
+	top: 10px;
+}
+
+.form-field--color {
+	.verte {
+		flex-wrap: wrap;
+	}
+	.verte__menu-origin {
+		position: relative;
+		top: 0;
+		width: 100%;
+	}
+	.verte__guide {
+		width: 100%;
+		display: block;
+		height: 60px;
+		svg {
+			display: inline-block;
+			width: 24px;
+			height: auto;
+		}
+	}
+	.form-field__inp {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.verte__menu {
+		width: 100%;
+	}
+	.form-field__control.value,
+	.form-field__control.focus {
+		.form-field__label {
+			font-size: 12px;
+			line-height: 16px;
+			top: 10px;
+		}
+	}
+	.form-field__control.focus {
+		.form-field__inp {
+			border-color: $blue-color;
+		}
+	}
+}

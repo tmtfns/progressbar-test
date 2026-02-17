@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+html {
+	overflow-y: scroll;
+}
+body,
+#app {
+	font-family: $app-font;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	background: #ffffff;
+	color: $text-color;
+	line-height: 1.2;
+	font-weight: 400;
+	text-align: left;
+	letter-spacing: 0.02em;
+}
+body {
+	overflow-x: hidden;
+}
+#app {
+	min-height: 100vh;
+	overflow: hidden;
+}

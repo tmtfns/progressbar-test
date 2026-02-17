@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+.container {
+	max-width: 1210px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.list-unstyled {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+.page-main {
+	margin-bottom: 40px;
+}

@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+.head {
+	color: $text-color;
+	font-family: $app-font;
+	letter-spacing: 0.02em;
+}
+.head--h3 {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 1.2;
+}
+.page-head {
+	//width: 336px;
+	//height: 39px;
+
+	font-family: $app-font;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 1.147;
+	color: $text-color;
+	border-bottom: 1px solid $border-color;
+	padding: 30px 0 30px 10px;
+	letter-spacing: 0.03em;
+	margin-bottom: 40px;
+}
