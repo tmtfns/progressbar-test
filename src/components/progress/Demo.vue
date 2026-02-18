@@ -126,6 +126,7 @@ import ProgressBar from './ProgressBar.vue';
 import { ProgressBarStatuses } from '@/types/progress';
 import ProgressBarCanvas from './ProgressBarCanvas.vue';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = withDefaults(defineProps<{ isCanvas?: boolean }>(), {
 	isCanvas: false,
 });

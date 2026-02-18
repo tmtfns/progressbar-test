@@ -19,7 +19,8 @@ const router = createRouter({
 			component: () => import('../pages/Canvas.vue'),
 		},
 	],
-	scrollBehavior(to, from, savedPosition) {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	scrollBehavior(to, from, savedPosition) {		
 		if (to.hash) {
 			return {
 				el: to.hash,

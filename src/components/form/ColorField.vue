@@ -74,9 +74,9 @@ const props = withDefaults(defineProps<ColorFieldProps>(), {
 });
 const modelValue = defineModel<any>();
 
-const emit = defineEmits({
-	'reset-error': (name: string) => {},
-});
+const emit = defineEmits<{
+	(event: 'reset-error', name: string): void;
+}>();
 const isFocus = ref<boolean>(false);
 const isShow = ref<boolean>(props.isModal ? true : false);
 

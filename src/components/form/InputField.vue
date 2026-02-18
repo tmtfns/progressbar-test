@@ -29,9 +29,9 @@ const props = withDefaults(defineProps<InputFieldProps>(), {
 });
 const modelValue = defineModel<any>();
 
-const emit = defineEmits({
-	'reset-error': (name: string) => {},
-});
+const emit = defineEmits<{
+	(event: 'reset-error', name: string): void;
+}>();
 
 function inputHandler() {
 	if (props.error) {

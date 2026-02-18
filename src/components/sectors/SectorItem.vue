@@ -33,10 +33,10 @@ import IconEdit from '../icons/IconEdit.vue';
 import IconTrash from '../icons/IconTrash.vue';
 
 const props = defineProps<{ item: Sector }>();
-const emit = defineEmits({
-	edit: (id: number) => {},
-	remove: (id: number) => {},
-});
+const emit = defineEmits<{
+	(event: 'edit', id: number): void;
+	(event: 'remove', id: number): void;	
+}>();
 
 const editHandler = () => {
 	emit('edit', props.item.id);
